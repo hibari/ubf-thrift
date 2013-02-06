@@ -1,7 +1,7 @@
 %% -*- Doc -*-
 %% vim: set syntax=asciidoc:
 @author Joseph Wayne Norton <norton@alum.mit.edu>
-@copyright 2011 by Joseph Wayne Norton
+@copyright 2011-2012 by Joseph Wayne Norton
 @title Universal Binary Format and Thrift
 @doc
 This is UBF-THRIFT, a framework for integrating UBF, TBF, and Thrift.
@@ -18,12 +18,9 @@ please follow this recipe:
 ------
 $ mkdir working-directory-name
 $ cd working-directory-name
-$ git clone git://github.com/norton/ubf-thrift.git ubf_thrift
+$ git clone https://github.com/ubf/ubf-thrift.git ubf_thrift
 $ cd ubf_thrift
-$ ./rebar get-deps
-$ ./rebar clean
-$ ./rebar compile
-$ ./rebar eunit
+$ make deps clean compile test
 ------
 
 For an alternative recipe with other "features" albeit more complex,
@@ -36,7 +33,7 @@ please read further.
 This README is a good first step.
 
 The UBF User\'s Guide is the best next step.  Check out
-http://norton.github.com/ubf/ubf-user-guide.en.html for further
+http://ubf.github.com/ubf/ubf-user-guide.en.html for further
 detailed information.
 
 Eunit tests can be found in the test/eunit directory.  These tests
@@ -58,7 +55,7 @@ data structures across a network.  It has three components:
 - UBF(c) is a meta-level protocol used between a UBF client and a UBF
   server.
 
-See http://norton.github.com/ubf for further details.
+See http://ubf.github.com/ubf for further details.
 
 === What is Thrift?
 
@@ -87,13 +84,13 @@ $ chmod a+x ~/bin/repo
 ------
 $ mkdir working-directory-name
 $ cd working-directory-name
-$ repo init -u git://github.com/norton/manifests.git -m ubf-thrift-default.xml
+$ repo init -u https://github.com/ubf/manifests.git -m ubf-thrift-default.xml
 ------
 +
 NOTE: Your "Git" identity is needed during the init step.  Please
 enter the name and email of your GitHub account if you have one.  Team
 members having read-write access are recommended to use "repo init -u
-git@github.com:norton/manifests.git -m ubf-thrift-default-rw.xml".
+git@github.com:ubf/manifests.git -m ubf-thrift-default-rw.xml".
 +
 TIP: If you want to checkout the latest development version, please
 append " -b dev" to the repo init command.
@@ -105,20 +102,20 @@ $ cd working-directory-name
 $ repo sync
 ------
 
-For futher information and help for related tools, please refer to the
+For further information and help for related tools, please refer to the
 following links:
 
 - Erlang - http://www.erlang.org/
-  * *R13B04 or newer, R15B has been tested most recently*
+  * *R13B04 or newer, R15B02 has been tested most recently*
 - Git - http://git-scm.com/
-  * *Git 1.5.4 or newer, Git 1.7.8 has been tested recently*
+  * *Git 1.5.4 or newer, Git 1.8.0 has been tested most recently*
   * _required for Repo and GitHub_
 - GitHub - https://github.com
 - Python - http://www.python.org
-  * *Python 2.4 or newer, Python 2.7.1 has been tested most recently
+  * *Python 2.4 or newer, Python 2.7.2 has been tested most recently
     (CAUTION: Python 3.x might be too new)*
 * _required for Repo_
-  - Rebar - https://github.com/basho/rebar/wiki
+  - Rebar - https://github.com/rebar/rebar/wiki
   - Repo - http://source.android.com/source/git-repo.html
 
 == To build - basic recipe
@@ -128,14 +125,14 @@ following links:
 2. Build
 +
 ------
-$ cd working-directory-name/src
+$ cd working-directory-name
 $ make compile
 ------
 
 3. Run the unit tests
 +
 ------
-$ cd working-directory-name/src
+$ cd working-directory-name
 $ make eunit
 ------
 
@@ -145,7 +142,7 @@ A. Dialyzer Testing _basic recipe_
    1. Build Dialyzer\'s PLT _(required once)_
 +
 ------
-$ cd working-directory-name/src
+$ cd working-directory-name
 $ make build-plt
 ------
 +
@@ -155,7 +152,7 @@ information.
    2. Dialyze with specs
 +
 ------
-$ cd working-directory-name/src
+$ cd working-directory-name
 $ make dialyze
 ------
 +
@@ -167,14 +164,15 @@ information.
    3. Dialyze without specs
 +
 ------
-$ cd working-directory-name/src
+$ cd working-directory-name
 $ make dialyze-nospec
 ------
 
 == Credits
 
 Many, many thanks to Joe Armstrong, UBF\'s designer and original
-implementor.
+implementer.
 
 Gemini Mobile Technologies, Inc. has approved the release of this
 repository under an MIT license.
+@end

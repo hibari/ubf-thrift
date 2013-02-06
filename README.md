@@ -3,7 +3,7 @@
 #Universal Binary Format and Thrift#
 
 
-Copyright (c) 2011 by Joseph Wayne Norton
+Copyright (c) 2011-2012 by Joseph Wayne Norton
 
 __Authors:__ Joseph Wayne Norton ([`norton@alum.mit.edu`](mailto:norton@alum.mit.edu)).<p>This is UBF-THRIFT, a framework for integrating UBF, TBF, and Thrift.
 This repository depends on the ubf open source repository.</p>
@@ -16,14 +16,11 @@ in carrier-grade systems.</em></p>
 please follow this recipe:</p>
 
 
-<pre><tt>$ mkdir working-directory-name
+<pre><code>$ mkdir working-directory-name
 $ cd working-directory-name
-$ git clone git://github.com/norton/ubf-thrift.git ubf_thrift
+$ git clone https://github.com/ubf/ubf-thrift.git ubf_thrift
 $ cd ubf_thrift
-$ ./rebar get-deps
-$ ./rebar clean
-$ ./rebar compile
-$ ./rebar eunit</tt></pre>
+$ make deps clean compile test</code></pre>
 
 <p>For an alternative recipe with other "features" albeit more complex,
 please read further.</p>
@@ -36,7 +33,7 @@ please read further.</p>
 <h3 id="_where_should_i_start">Where should I start?</h3>
 <p>This README is a good first step.</p>
 <p>The UBF User's Guide is the best next step.  Check out
-<a href="http://norton.github.com/ubf/ubf-user-guide.en.md">http://norton.github.com/ubf/ubf-user-guide.en.html</a> for further
+<a href="http://ubf.github.com/ubf/ubf-user-guide.en.html">http://ubf.github.com/ubf/ubf-user-guide.en.html</a> for further
 detailed information.</p>
 <p>Eunit tests can be found in the test/eunit directory.  These tests
 illustrate a generic module that uses UBF's contract manager for
@@ -69,7 +66,7 @@ UBF(c) is a meta-level protocol used between a UBF client and a UBF
 </p>
 </li>
 </ul>
-<p>See <a href="http://norton.github.com/ubf">http://norton.github.com/ubf</a> for further details.</p>
+<p>See <a href="http://ubf.github.com/ubf">http://ubf.github.com/ubf</a> for further details.</p>
 
 
 <h3 id="_what_is_thrift">What is Thrift?</h3>
@@ -88,8 +85,8 @@ Configure your e-mail and name for Git
 </p>
 
 
-<pre><tt>$ git config \--global user.email "you@example.com"
-$ git config \--global user.name "Your Name"</tt></pre>
+<pre><code>$ git config \--global user.email "you@example.com"
+$ git config \--global user.name "Your Name"</code></pre>
 
 </li>
 <li>
@@ -98,9 +95,9 @@ Install Repo
 </p>
 
 
-<pre><tt>$ mkdir -p ~/bin
+<pre><code>$ mkdir -p ~/bin
 $ wget -O - https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/bin/repo
-$ chmod a+x ~/bin/repo</tt></pre>
+$ chmod a+x ~/bin/repo</code></pre>
 
 </li>
 <li>
@@ -109,9 +106,9 @@ Create working directory
 </p>
 
 
-<pre><tt>$ mkdir working-directory-name
+<pre><code>$ mkdir working-directory-name
 $ cd working-directory-name
-$ repo init -u git://github.com/norton/manifests.git -m ubf-thrift-default.xml</tt></pre>
+$ repo init -u https://github.com/ubf/manifests.git -m ubf-thrift-default.xml</code></pre>
 
 
 <table><tr>
@@ -121,7 +118,7 @@ Note
 <td class="content">Your "Git" identity is needed during the init step.  Please
 enter the name and email of your GitHub account if you have one.  Team
 members having read-write access are recommended to use "repo init -u
-<a href="mailto:git@github.com">git@github.com</a>:norton/manifests.git -m ubf-thrift-default-rw.xml".</td>
+<a href="mailto:git@github.com">git@github.com</a>:ubf/manifests.git -m ubf-thrift-default-rw.xml".</td>
 </tr></table>
 
 
@@ -140,12 +137,12 @@ Download Git repositories
 </p>
 
 
-<pre><tt>$ cd working-directory-name
-$ repo sync</tt></pre>
+<pre><code>$ cd working-directory-name
+$ repo sync</code></pre>
 
 </li>
 </ol>
-<p>For futher information and help for related tools, please refer to the
+<p>For further information and help for related tools, please refer to the
 following links:</p>
 <ul>
 <li>
@@ -155,7 +152,7 @@ Erlang - <a href="http://www.erlang.org/">http://www.erlang.org/</a>
 <ul>
 <li>
 <p>
-<strong>R13B04 or newer, R15B has been tested most recently</strong>
+<strong>R13B04 or newer, R15B02 has been tested most recently</strong>
 </p>
 </li>
 </ul>
@@ -167,7 +164,7 @@ Git - <a href="http://git-scm.com/">http://git-scm.com/</a>
 <ul>
 <li>
 <p>
-<strong>Git 1.5.4 or newer, Git 1.7.8 has been tested recently</strong>
+<strong>Git 1.5.4 or newer, Git 1.8.0 has been tested most recently</strong>
 </p>
 </li>
 <li>
@@ -189,7 +186,7 @@ Python - <a href="http://www.python.org">http://www.python.org</a>
 <ul>
 <li>
 <p>
-<strong>Python 2.4 or newer, Python 2.7.1 has been tested most recently
+<strong>Python 2.4 or newer, Python 2.7.2 has been tested most recently
     (CAUTION: Python 3.x might be too new)</strong>
 </p>
 </li>
@@ -202,12 +199,12 @@ Python - <a href="http://www.python.org">http://www.python.org</a>
 </li>
 <li>
 <p>
-Rebar - <a href="https://github.com/basho/rebar/wiki">https://github.com/basho/rebar/wiki</a>
+Rebar - <a href="https://github.com/rebar/rebar/wiki">https://github.com/rebar/rebar/wiki</a>
 </p>
 </li>
 <li>
 <p>
-Repo - <a href="http://source.android.com/source/git-repo.md">http://source.android.com/source/git-repo.html</a>
+Repo - <a href="http://source.android.com/source/git-repo.html">http://source.android.com/source/git-repo.html</a>
 </p>
 </li>
 </ul>
@@ -228,8 +225,8 @@ Build
 </p>
 
 
-<pre><tt>$ cd working-directory-name/src
-$ make compile</tt></pre>
+<pre><code>$ cd working-directory-name
+$ make compile</code></pre>
 
 </li>
 <li>
@@ -238,8 +235,8 @@ Run the unit tests
 </p>
 
 
-<pre><tt>$ cd working-directory-name/src
-$ make eunit</tt></pre>
+<pre><code>$ cd working-directory-name
+$ make eunit</code></pre>
 
 </li>
 </ol>
@@ -260,8 +257,8 @@ Build Dialyzer's PLT <em>(required once)</em>
 </p>
 
 
-<pre><tt>$ cd working-directory-name/src
-$ make build-plt</tt></pre>
+<pre><code>$ cd working-directory-name
+$ make build-plt</code></pre>
 
 
 <table><tr>
@@ -279,8 +276,8 @@ Dialyze with specs
 </p>
 
 
-<pre><tt>$ cd working-directory-name/src
-$ make dialyze</tt></pre>
+<pre><code>$ cd working-directory-name
+$ make dialyze</code></pre>
 
 
 <table><tr>
@@ -300,8 +297,8 @@ Dialyze without specs
 </p>
 
 
-<pre><tt>$ cd working-directory-name/src
-$ make dialyze-nospec</tt></pre>
+<pre><code>$ cd working-directory-name
+$ make dialyze-nospec</code></pre>
 
 </li>
 </ol>
@@ -313,7 +310,7 @@ $ make dialyze-nospec</tt></pre>
 <h2 id="_credits">Credits</h2>
 
 <p>Many, many thanks to Joe Armstrong, UBF's designer and original
-implementor.</p>
+implementer.</p>
 <p>Gemini Mobile Technologies, Inc. has approved the release of this
 repository under an MIT license.</p>
 
@@ -324,10 +321,10 @@ repository under an MIT license.</p>
 
 
 <table width="100%" border="0" summary="list of modules">
-<tr><td><a href="https://github.com/norton/ubf-thrift/blob/dev/doc/ftbf.md" class="module">ftbf</a></td></tr>
-<tr><td><a href="https://github.com/norton/ubf-thrift/blob/dev/doc/ftbf_driver.md" class="module">ftbf_driver</a></td></tr>
-<tr><td><a href="https://github.com/norton/ubf-thrift/blob/dev/doc/tbf.md" class="module">tbf</a></td></tr>
-<tr><td><a href="https://github.com/norton/ubf-thrift/blob/dev/doc/tbf_driver.md" class="module">tbf_driver</a></td></tr>
-<tr><td><a href="https://github.com/norton/ubf-thrift/blob/dev/doc/thrift_contract_parser.md" class="module">thrift_contract_parser</a></td></tr>
-<tr><td><a href="https://github.com/norton/ubf-thrift/blob/dev/doc/ubf_thrift_plugin.md" class="module">ubf_thrift_plugin</a></td></tr></table>
+<tr><td><a href="https://github.com/ubf/ubf-thrift/blob/master/doc/ftbf.md" class="module">ftbf</a></td></tr>
+<tr><td><a href="https://github.com/ubf/ubf-thrift/blob/master/doc/ftbf_driver.md" class="module">ftbf_driver</a></td></tr>
+<tr><td><a href="https://github.com/ubf/ubf-thrift/blob/master/doc/tbf.md" class="module">tbf</a></td></tr>
+<tr><td><a href="https://github.com/ubf/ubf-thrift/blob/master/doc/tbf_driver.md" class="module">tbf_driver</a></td></tr>
+<tr><td><a href="https://github.com/ubf/ubf-thrift/blob/master/doc/thrift_contract_parser.md" class="module">thrift_contract_parser</a></td></tr>
+<tr><td><a href="https://github.com/ubf/ubf-thrift/blob/master/doc/ubf_thrift_plugin.md" class="module">ubf_thrift_plugin</a></td></tr></table>
 

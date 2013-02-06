@@ -2,7 +2,7 @@
 
 -compile(export_all).
 -include_lib("eunit/include/eunit.hrl").
--include("ubf.hrl").
+-include_lib("ubf/include/ubf.hrl").
 
 -define(APPLICATION, thrift_plugin).
 -define(TBF_PORT, server_port(test_tbf_tcp_port)).
@@ -55,14 +55,14 @@ all_actual_tests_(Host,Port,Proto) ->
 %%%----------------------------------------------------------------------
 
 test_setup(App) ->
-    application:start(sasl),
-    application:stop(App),
+    _ = application:start(sasl),
+    _ = application:stop(App),
     true = code:add_patha("../test/eunit"),
     ok = application:start(App),
     App.
 
 test_teardown(App) ->
-    application:stop(App),
+    _ = application:stop(App),
     true = code:del_path("../test/eunit"),
     ok.
 
@@ -138,7 +138,7 @@ server_port(Name) ->
     end.
 
 client_connect(#args{host=Host,port=Port,proto=Proto}) ->
-    Options = [{proto,Proto},{serverlessrpc,true},{serverhello,undefined},{simplerpc,true}],
+    Options = [{proto,Proto},{statelessrpc,true},{serverhello,undefined},{simplerpc,true}],
     {ok,Pid,undefined} = ubf_client:connect(Host,Port,Options,infinity),
     {ok,Pid}.
 
