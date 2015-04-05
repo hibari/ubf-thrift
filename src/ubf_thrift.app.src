@@ -3,13 +3,13 @@
 {application, ubf_thrift,
  [
   {description, "Universal Binary Format and Thrift"},
-  {vsn, "v0.1.6.1"},
+  {vsn, "1.1.1"},
   {registered, []},
   {applications, [kernel, stdlib, sasl]},
-  {modules, [tbf.erl
-             , tbf_driver.erl
-             , thrift_contract_parser.erl
-             , ubf_thrift_plugin.erl
+  {modules, [tbf
+             , tbf_driver
+             , thrift_contract_parser
+             , ubf_thrift_plugin
             ]},
   {env, []}
  ]}.
